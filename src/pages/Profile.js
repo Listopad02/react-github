@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { useContext } from "react/cjs/react.development"
 import { GithubContext } from "../context/github/githubContext"
 import { Link, useParams } from "react-router-dom"
+import { Repos } from "../components/Repos"
 
 export const Profile = ({match}) => {
     const { getUser, getRepos, loading, user, repos } = useContext(GithubContext)
@@ -73,6 +74,7 @@ export const Profile = ({match}) => {
                     </div>
                 </div>
             </div>
+            <Repos repos={repos} />
         </>
     )
 }
